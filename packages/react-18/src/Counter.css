@@ -1,0 +1,21 @@
+.Counter-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.Counter-btn {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.Counter-value {
+    display: inline-block;
+    width: 120px;
+    font-size: 24px;
+    font-weight: bold;
+}

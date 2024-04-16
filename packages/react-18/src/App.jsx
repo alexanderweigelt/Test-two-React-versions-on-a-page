@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './Counter';
 import './App.css';
 
 console.log('Modern React App. Version: ', React.version);
@@ -20,6 +21,7 @@ function App() {
             >
                 Learn React with Version 18
             </a>
+            <Counter />
         </div>
     );
 }

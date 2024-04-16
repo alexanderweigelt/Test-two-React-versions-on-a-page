@@ -18,3 +18,25 @@
 .App-link {
   color: #61dafb;
 }
+
+.App-btn {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.App-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.App-counter-value {
+  display: inline-block;
+  width: 120px;
+  font-size: 24px;
+  font-weight: bold;
+}
