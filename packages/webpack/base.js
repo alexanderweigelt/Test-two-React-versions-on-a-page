@@ -1,29 +1,17 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isProduction = process.env.NODE_ENV == 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = 'style-loader';
 
 const config = {
+    name: 'base',
     entry: {
-        "react-16": '@test-react/react-16',
-        "react-18": '@test-react/react-18',
         'styles': '@test-react/styles/src/index.css'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-    },
-    devServer: {
-        open: true,
-        host: 'localhost',
+        path: path.resolve(__dirname, '../../dist/assets'),
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-        }),
-
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
@@ -32,22 +20,22 @@ const config = {
             {
                 test: /\.(js|jsx)$/i,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
                         presets: [
                             [
-                                "@babel/preset-env",
+                                '@babel/preset-env',
                                 {
-                                    "modules": false
+                                    'modules': false
                                 }
-                            ], "@babel/preset-react"
+                            ], '@babel/preset-react'
                         ],
                     },
                 },
             },
             {
                 test: /\.css$/i,
-                use: [stylesHandler,'css-loader'],
+                use: [stylesHandler, 'css-loader'],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -59,17 +47,21 @@ const config = {
         ],
     },
     resolve: {
-        extensions: ['.jsx', '.js'],
+        extensions: ['.jsx', '.js', '...'],
+        // Add the path to the directory containing React versions in packages
+        modules: [
+            path.resolve(__dirname, 'node_modules'),
+            'node_modules', // fallback to root node_modules
+        ],
     }
 };
 
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
-
-
     } else {
         config.mode = 'development';
+        config.devtool = 'source-map';
     }
     return config;
 };

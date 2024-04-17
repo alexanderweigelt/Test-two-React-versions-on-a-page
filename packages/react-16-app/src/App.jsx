@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react-16';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './actions/counterActions';
 import './App.css';

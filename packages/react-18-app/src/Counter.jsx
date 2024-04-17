@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Button} from "@mui/material";
 import './Counter.css'
 
 const Counter = () => {
@@ -13,12 +14,12 @@ const Counter = () => {
     };
 
     return (
-        <div className={"Counter-container"}>
+        <div className="Counter-container">
             <h4>Click Counter</h4>
             <div>
-                <button className="Counter-btn" onClick={increment}>Increment</button>
+                <Button variant="contained" className="Counter-btn" onClick={increment}>Increment</Button>
                 <span className="Counter-value">{count}</span>
-                <button className="Counter-btn" onClick={decrement}>Decrement</button>
+                <Button variant="contained" className="Counter-btn" onClick={decrement}>Decrement</Button>
             </div>
         </div>
     );
