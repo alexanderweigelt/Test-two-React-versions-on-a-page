@@ -2,17 +2,26 @@
     "name": "test-react",
     "version": "1.0.0",
     "description": "Test two React versions on a page",
+    "homepage": "https://alexanderweigelt.github.io/Test-two-React-versions-on-a-page",
     "keywords": [],
     "private": true,
     "scripts": {
-        "build": "webpack --config packages/webpack/main.js --mode=production --node-env=production && npm run build:legacy",
-        "build:dev": "webpack --config packages/webpack/main.js --mode=development && npm run build:legacy",
-        "build:legacy": "webpack --config packages/webpack/legacy.js --mode=production --node-env=production"
+        "build": "webpack --mode=production --node-env=production",
+        "build:dev": "webpack --mode=development",
+        "predeploy": "npm run build:dev",
+        "deploy": "gh-pages -d dist"
     },
     "workspaces": [
         "packages/*"
     ],
     "engines": {
         "node": ">=18.18.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alexanderweigelt/Test-two-React-versions-on-a-page.git"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.1.1"
     }
 }

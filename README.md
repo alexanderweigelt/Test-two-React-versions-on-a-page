@@ -1,5 +1,7 @@
 # Managing Multiple React Versions in a Monorepo with Webpack
 
+Try it out [Example page](https://alexanderweigelt.github.io/Test-two-React-versions-on-a-page/)
+
 ## Introduction
 In this case study, we explore the challenges and solutions for managing multiple versions of React within a monorepo using Webpack. We'll cover the background of the project, the task at hand, the implemented solution, and the rationale behind our approach.
 

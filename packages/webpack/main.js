@@ -12,9 +12,6 @@ module.exports = {
             dependOn: 'react-vendors'
         },
     },
-    output: {
-        clean: true
-    },
     resolve: {
         alias: {
             // Alias for all packages that use React version 18.x
